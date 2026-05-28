@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programma Vitalità Over 60 - Forza e Mobilità</title>
+    <title>Movimento 360 - Performance Atletica e Wellness per tutti</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS RESET & VARIABILI */
+        /* CSS RESET & VARIABILI BRANDING "MOVIMENTO 360" */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         
         :root {
-            --primary-color: #1A2B4C;   /* Blu Notte Profondo */
-            --secondary-color: #4A7C59; /* Verde Salvia Benessere */
-            --accent-color: #E28743;    /* Arancione Zucca / CTA */
-            --bg-warm: #FBF9F6;          /* Bianco Crema Caldo */
-            --text-dark: #2D3142;       /* Grigio Scuro Antracite */
+            --primary-color: #0F172A;   /* Blu Notte Ardesia Profondo (Autorevolezza e Lusso) */
+            --secondary-color: #0D9488; /* Teal / Verde Petrolio (Wellness, Salute, Vitalità) */
+            --accent-color: #F97316;    /* Arancione Energetico (Performance, Azione, CTA) */
+            --bg-warm: #F8FAFC;          /* Grigio Ghiaccio Caldo e Pulito */
+            --text-dark: #1E293B;       /* Antracite per testi ad alto contrasto */
             --text-light: #FFFFFF;
-            --font-title: 'Playfair Display', Georgia, serif;
-            --font-body: 'Inter', Helvetica, Arial, sans-serif;
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         body {
@@ -32,11 +33,10 @@
             background-color: var(--bg-warm);
             color: var(--text-dark);
             line-height: 1.6;
-            font-size: 18px; /* Ottimizzato per accessibilità visiva Over 60 */
+            font-size: 18px;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* STRUTTURA E LAYOUT */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -45,17 +45,18 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         /* HEADER */
         header {
-            background-color: var(--bg-warm);
-            border-bottom: 1px solid rgba(26, 43, 76, 0.1);
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .header-flex {
             display: flex;
@@ -64,518 +65,454 @@
         }
         .logo {
             font-family: var(--font-title);
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .phone-cta {
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
-            border: 2px solid var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-size: 16px;
-        }
-        .phone-cta:hover {
-            background-color: var(--primary-color);
+            font-size: 26px;
+            font-weight: 800;
             color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .logo span {
+            color: var(--secondary-color);
+        }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
-        /* HERO SECTION */
+        /* HERO HERO BACKGROUND INTERA */
         .hero {
-            background: linear-gradient(135deg, #F5F1EB 0%, #EAE3D8 100%);
-            padding: 100px 0;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
             align-items: center;
+            color: var(--text-light);
+            text-align: center;
         }
-        @media (max-width: 768px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
         }
         .hero h1 {
             font-family: var(--font-title);
-            font-size: 46px;
-            color: var(--primary-color);
-            line-height: 1.2;
-            margin-bottom: 24px;
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
         }
-        @media (max-width: 480px) { .hero h1 { font-size: 34px; } }
+        .hero h1 span {
+            color: var(--accent-color);
+        }
         .hero p {
-            font-size: 20px;
-            margin-bottom: 32px;
-            color: rgba(45, 49, 66, 0.9);
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .btn-main {
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--text-light);
             text-decoration: none;
-            padding: 18px 36px;
+            padding: 18px 40px;
             font-size: 18px;
-            font-weight: 600;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(226, 135, 67, 0.4);
-            transition: transform 0.2s, background-color 0.3s;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
         }
         .btn-main:hover {
-            background-color: #cb7232;
+            background-color: #ea580c;
             transform: translateY(-2px);
-        }
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 24px rgba(249, 115, 22, 0.6);
         }
 
-        /* TRUST / SOCIAL PROOF */
-        .trust-section {
+        /* CHI SIAMO / MISSION */
+        .about {
             background-color: var(--text-light);
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 1px solid #EAEAEA;
         }
-        .trust-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #7A7A7A;
-            margin-bottom: 20px;
-        }
-        .trust-flex {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            flex-wrap: wrap;
         }
-        .trust-badge {
-            font-weight: 600;
-            color: #A0A0A0;
-            font-size: 18px;
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
         }
-
-        /* VANTAGGI CHIAVE */
-        .benefits { background-color: var(--text-light); }
+        .section-tag {
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
         .section-title {
             font-family: var(--font-title);
-            font-size: 36px;
+            font-size: 40px;
             color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        .section-subtitle {
-            text-align: center;
-            color: #606060;
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .about-text p {
+            margin-bottom: 20px;
+            color: #475569;
+            font-size: 18px;
         }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
         }
-        .benefit-card {
+
+        /* PROGRAMMI E SERVIZI */
+        .services {
             background-color: var(--bg-warm);
-            padding: 40px;
-            border-radius: 12px;
-            border-left: 5px solid var(--secondary-color);
         }
-        .benefit-card h3 {
+        .services-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background-color: var(--text-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+        .service-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-content {
+            padding: 32px;
+        }
+        .service-content h3 {
             font-family: var(--font-title);
-            font-size: 24px;
+            font-size: 22px;
             color: var(--primary-color);
             margin-bottom: 16px;
         }
-
-        /* BOX PERSONA CARA (CAREGIVER ANGLE) */
-        .caregiver-box {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            border-radius: 16px;
-            padding: 48px;
-            margin: 60px 0;
-        }
-        .caregiver-box h3 {
-            font-family: var(--font-title);
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-        .caregiver-box p {
-            font-size: 19px;
-            opacity: 0.95;
-            max-width: 800px;
+        .service-content p {
+            color: #475569;
+            font-size: 16px;
         }
 
-        /* METODO IN 3 PASSI */
-        .method { background-color: var(--bg-warm); }
-        .method-grid {
+        /* TEAM / CURRICULUM */
+        .team {
+            background-color: var(--text-light);
+        }
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
             margin-top: 40px;
         }
-        .method-step {
-            text-align: center;
-            padding: 20px;
+        @media (max-width: 768px) {
+            .team-grid { grid-template-columns: 1fr; }
         }
-        .step-number {
-            width: 60px;
-            height: 60px;
+        .team-card {
+            background-color: var(--bg-warm);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        @media (max-width: 480px) {
+            .team-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            flex-shrink: 0;
+        }
+        .team-info h3 {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+        .team-role {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .team-bio {
+            color: #475569;
+            font-size: 16px;
+        }
+
+        /* CONTATTI */
+        .contact {
             background-color: var(--primary-color);
             color: var(--text-light);
-            border-radius: 50%;
+        }
+        .contact .section-title {
+            color: var(--text-light);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .contact-details {
+            margin-top: 32px;
+        }
+        .contact-item {
+            margin-bottom: 16px;
+            font-size: 16px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 auto 24px auto;
+            gap: 12px;
         }
-        .method-step h3 {
-            font-family: var(--font-body);
-            font-size: 22px;
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        /* TESTIMONIALS */
-        .testimonials { background-color: var(--text-light); }
-        .testimonial-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--bg-warm);
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-        .testimonial-text {
-            font-family: var(--font-title);
-            font-style: italic;
-            font-size: 22px;
-            color: var(--primary-color);
-            margin-bottom: 24px;
-        }
-        .testimonial-author {
-            font-weight: 600;
-            font-size: 18px;
-            color: var(--text-dark);
-        }
-
-        /* SEZIONE BONIFICO E PREZZO */
-        .payment-section {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-        }
-        .payment-section .section-title {
-            color: var(--text-light);
-        }
-        .payment-box {
-            max-width: 750px;
-            margin: 40px auto 0 auto;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 40px;
-        }
-        .price-tag {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .price-old {
-            text-decoration: line-through;
-            opacity: 0.6;
-            font-size: 20px;
-            margin-right: 12px;
-        }
-        .price-new {
-            font-size: 38px;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        .bank-details {
-            margin-top: 24px;
-            background-color: #FFFFFF;
-            color: var(--text-dark);
-            padding: 24px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        .bank-details strong {
-            font-family: var(--font-body);
-            color: var(--primary-color);
-        }
-        .payment-instructions {
-            margin-top: 24px;
-            font-size: 16px;
-            opacity: 0.9;
-            text-align: center;
-        }
-
-        /* FORM DI CONTATTO / PRENOTAZIONE */
-        .contact-section { background-color: var(--bg-warm); }
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
             background-color: var(--text-light);
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--primary-color);
+            font-size: 15px;
         }
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 14px;
-            border: 2px solid #EAEAEA;
-            border-radius: 6px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
             font-size: 16px;
             color: var(--text-dark);
+            font-family: var(--font-body);
             transition: border-color 0.3s;
         }
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-color);
         }
 
-        /* FAQ */
-        .faq { background-color: var(--text-light); }
-        .faq-item {
-            max-width: 800px;
-            margin: 0 auto 24px auto;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #EAEAEA;
-        }
-        .faq-item h4 {
-            font-size: 20px;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
         /* FOOTER */
         footer {
-            background-color: #111D32;
-            color: rgba(255,255,255,0.6);
+            background-color: #0B111E;
+            color: rgba(255,255,255,0.5);
             padding: 40px 0;
-            font-size: 15px;
+            font-size: 14px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
-        footer p { margin-bottom: 12px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container header-flex">
-            <a href="#" class="logo">Vitalità Senza Età</a>
-            <a href="tel:+39021234567" class="phone-cta">📞 Chiama Ora: 02 1234567</a>
+            <a href="#" class="logo">MOVIMENTO<span>360</span></a>
+            <nav class="nav-links">
+                <a href="#chi-siamo">Chi Siamo</a>
+                <a href="#servizi">Programmi</a>
+                <a href="#team">Il Team</a>
+                <a href="#contatti">Contatti</a>
+            </nav>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Riprenditi la libertà di muoverti. Con il corpo di oggi, con l'energia di ieri.</h1>
-                <p>Il primo percorso di movimento e mobilità personalizzato, studiato esclusivamente per l'età matura. Torna a fare le cose che ami, senza la paura di cadere o di farti male.</p>
-                <a href="#iscriviti" class="btn-main">Inizia il tuo viaggio verso il benessere</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Anziani attivi e in salute che sorridono">
+        <div class="container">
+            <div class="hero-content">
+                <h1>MOVIMENTO 360</h1>
+                <p>Performance Atletica e Wellness per tutti</p>
+                <a href="#contatti" class="btn-main">Prenota Una Consulenza</a>
             </div>
         </div>
     </section>
 
-    <div class="trust-section">
+    <section id="chi-siamo" class="about">
         <div class="container">
-            <div class="trust-title">Metodo Approvato & Certificato</div>
-            <div class="trust-flex">
-                <div class="trust-badge">✓ Personal Trainers Specializzati Over 60</div>
-                <div class="trust-badge">✓ Protocolli di Mobilità Sicura</div>
-                <div class="trust-badge">✓ Soddisfatti o Rimborsati al 100%</div>
-            </div>
-        </div>
-    </div>
-
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">Piccoli miglioramenti, una grande trasformazione</h2>
-            <p class="section-subtitle">Non cerchiamo lo sforzo estremo, ma la costanza che restituisce vitalità alle tue giornate.</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>⚡ Più Sicurezza nei Movimenti</h3>
-                    <p>Rinforza l'equilibrio e la stabilità delle tue articolazioni. Cammina, chinati e muoviti in totale autonomia, riducendo drasticamente il rischio di cadute o incidenti domestici.</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag">La Nostra Filosofia</span>
+                    <h2 class="section-title">Il movimento non ha età, il benessere non ha compromessi.</h2>
+                    <p>Siamo nati con una visione chiara: considerare il corpo umano nella sua totalità. Non importa se l'obiettivo è salire sul gradino più alto del podio o ritrovare il piacere di muoversi liberamente senza dolori quotidiani. La scienza della biomeccanica applicata è la stessa.</p>
+                    <p>La nostra mission è democratizzare l'eccellenza della preparazione atletica, declinandola in percorsi su misura che rispettano la fisiologia e la storia di ogni singola persona che varca la nostra porta.</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>☀️ Mattine senza Rigidità</h3>
-                    <p>Saluta quel fastidioso senso di blocco quando scendi dal letto. Pochi minuti di esercizi guidati e mirati risveglieranno la fluidità e la flessibilità del tuo corpo ogni giorno.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>💪 Energia per chi Ami</h3>
-                    <p>Giocare con i nipoti senza stancarti, dedicarti al giardinaggio o ricominciare a viaggiare. Non rinunciare a nessun momento speciale per colpa dei dolori diffusi.</p>
-                </div>
-            </div>
-
-            <div class="caregiver-box">
-                <h3>Sei qui per un genitore o per il tuo partner?</h3>
-                <p>Veder invecchiare chi amiamo non è facile, specialmente quando li vediamo rinunciare progressivamente alla propria indipendenza per paura o dolore. Regalare questo programma guidato significa donare loro sicurezza, salute e la serenità di sapere che sono seguiti da professionisti estremamente preparati e attenti.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="method">
-        <div class="container">
-            <h2 class="section-title">Come funziona il programma</h2>
-            <p class="section-subtitle">Un percorso semplice, sicuro, passo dopo passo, direttamente accessibile e senza stress.</p>
-            
-            <div class="method-grid">
-                <div class="method-step">
-                    <div class="step-number">1</div>
-                    <h3>Valutazione Iniziale</h3>
-                    <p>Un colloquio telefonico o di persona per comprendere la tua storia, i tuoi dolori attuali e i tuoi obiettivi di mobilità.</p>
-                </div>
-                <div class="method-step">
-                    <div class="step-number">2</div>
-                    <h3>Esercizi su Misura</h3>
-                    <p>Ricevi il tuo piano di movimenti dolci e progressivi, spiegati video per video con la massima chiarezza e senza termini tecnici difficili.</p>
-                </div>
-                <div class="method-step">
-                    <div class="step-number">3</div>
-                    <h3>Supporto Continuo</h3>
-                    <p>Un esperto dedicato monitora i tuoi progressi ogni settimana, adattando gli esercizi per garantirti zero dolori e massimi benefici.</p>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Movimento 360 Training center">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials">
+    <section id="servizi" class="services">
         <div class="container">
-            <h2 class="section-title">Storie di vera rinascita</h2>
-            <p class="section-subtitle">Ecco l'esperienza di chi ha già deciso di riprendere in mano la propria vita.</p>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Prima di iniziare questo percorso, anche solo allacciarmi le scarpe o fare le scale era diventato un incubo per via del dolore alle ginocchia. Dopo sole 6 settimane mi sento di nuovo leggera, stabile e ho ricominciato a fare le mie lunghe camminate pomeridiane."</p>
-                <p class="testimonial-author">– Maria T., 67 anni (Milano)</p>
+            <div class="services-header">
+                <span class="section-tag">Cosa Facciamo</span>
+                <h2 class="section-title">Percorsi Integrati e Specializzati</h2>
             </div>
-        </div>
-    </section>
-
-    <section class="payment-section" id="pagamento">
-        <div class="container">
-            <h2 class="section-title">Iscriviti Oggi al Programma</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Scegli la massima sicurezza. Puoi bloccare la tua iscrizione comodamente tramite Bonifico Bancario.</p>
             
-            <div class="payment-box">
-                <div class="price-tag">
-                    <span class="price-old">€350,00</span>
-                    <span class="price-new">€249,00</span>
-                    <p style="margin-top: 8px; font-size: 14px; opacity: 0.8;">Promozione Lancio - Accesso Completo per 12 Settimane</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>1. Performance Atletica</h3>
+                        <p>Protocolli avanzati dedicati ad atleti professionisti ed amatori evoluti. Programmazione scientifica focalizzata sul mantenimento dei livelli di picco, sulla prevenzione degli infortuni e sulla preparazione alle competizioni, ottimizzando la catena strutturale nel tempo.</p>
+                    </div>
                 </div>
 
-                <p style="font-weight: 600; margin-bottom: 12px; text-align: center;">Dati Reali per il Bonifico Bancario:</p>
-                
-                <div class="bank-details">
-                    <strong>Beneficiario:</strong> VITALITA OVER 60 S.R.L.<br>
-                    <strong>Istituto Bancario:</strong> Intesa Sanpaolo S.p.A.<br>
-                    <strong>IBAN:</strong> IT 99 C 03069 03200 100000012345<br>
-                    <strong>Codice BIC/SWIFT:</strong> BCITITMMXXX<br>
-                    <strong>Importo esatto:</strong> € 249,00<br>
-                    <strong>Causale Obbligatoria:</strong> Iscrizione Programma Mobilita [Inserire Nome e Cognome Allievo]
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>2. Fitness Quotidiano & Longevità</h3>
+                        <p>Classi e lezioni strutturate per ogni fascia d'età, con una specializzazione profonda nel functional training e nel mantenimento della mobilità articolare per le persone senior. Per restare dinamici, stabili e forti a prescindere dagli anni sulla carta.</p>
+                    </div>
                 </div>
 
-                <div class="payment-instructions">
-                    <p>💡 <strong>Cosa fare dopo il pagamento?</strong> Invia la contabile o la foto della ricevuta del bonifico via WhatsApp al numero <strong>333 1234567</strong> oppure compila il modulo sottostante allegando i tuoi dati. Il tuo tutor ti contatterà entro 24 ore lavorative per attivare il percorso.</p>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>3. Rieducazione & Recupero</h3>
+                        <p>Il perfetto anello di congiunzione tra terapia e movimento. Sfruttando le nostre competenze verticali, strutturiamo percorsi per correggere i vizi posturali legati alla vita sedentaria o per riatletizzare il corpo dopo un trauma o un intervento chirurgico.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="iscriviti">
+    <section id="team" class="team">
         <div class="container">
-            <h2 class="section-title">Richiedi Informazioni o Conferma il Bonifico</h2>
-            <p class="section-subtitle">Compila il modulo in basso. Se hai già effettuato il bonifico, useremo questi dati per contattarti immediatamente.</p>
-            
-            <form class="contact-form" action="#" method="POST" onsubmit="alert('Grazie! Riceverai una chiamata dal tuo assistente dedicato entro 24 ore.'); return false;">
-                <div class="form-group">
-                    <label for="tipo-iscrizione">Chi seguirà il percorso?</label>
-                    <select id="tipo-iscrizione" required>
-                        <option value="">Seleziona un'opzione...</option>
-                        <option value="diretto">Voglio seguirlo io stesso/a (Over 60)</option>
-                        <option value="caro">Sto iscrivendo un mio genitore / persona cara</option>
-                    </select>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="section-tag">I Professionisti</span>
+                <h2 class="section-title">Guidati dall'Esperienza</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img class="team-avatar" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=300&q=80" alt="Federico - Movimento 360">
+                    <div class="team-info">
+                        <h3>Federico</h3>
+                        <span class="team-role">Head of Athletic Performance</span>
+                        <p class="team-bio">Laureato in Scienze Motorie con specializzazione in Strength & Conditioning. Ha trascorso gli ultimi anni preparando atleti di livello agonistico in discipline di potenza ed endurance. La sua precisione millimetrica nella programmazione è la chiave per l'evoluzione strutturale dei nostri atleti.</p>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="nome">Nome e Cognome di chi effettua l'iscrizione</label>
-                    <input type="text" id="nome" placeholder="Es. Mario Rossi" required>
+                <div class="team-card">
+                    <img class="team-avatar" src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=300&q=80" alt="Valerio - Movimento 360">
+                    <div class="team-info">
+                        <h3>Valerio</h3>
+                        <span class="team-role">Specialist in Kinesiology & Wellness</span>
+                        <p class="team-bio">Chinesiologo esperto in ginnastica posturale e mobilità per la terza età. Con anni di esperienza nel recupero funzionale e nel personal training individualizzato, Valerio è specializzato nel tradurre i concetti più complessi della biomeccanica in movimenti fluidi, sicuri e accessibili a tutti.</p>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="telefono">Numero di Telefono (per la chiamata di attivazione)</label>
-                    <input type="tel" id="telefono" placeholder="Es. 333 1234567" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="stato-pagamento">Hai già effettuato il bonifico bancario?</label>
-                    <select id="stato-pagamento" required>
-                        <option value="no">No, voglio prima parlare con un esperto al telefono</option>
-                        <option value="si">Sì, ho già effettuato il bonifico di €249,00</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn-main" style="width: 100%; border-radius: 6px; margin-top: 10px;">Voglio parlare con il mio Assistente Dedicato</button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <section class="faq">
+    <section id="contatti" class="contact">
         <div class="container">
-            <h2 class="section-title">Domande Frequenti</h2>
-            <p class="section-subtitle">Le risposte chiare ai dubbi più comuni dei nostri allievi e delle loro famiglie.</p>
-            
-            <div class="faq-item">
-                <h4>Ho l'artrosi e qualche dolore cronico, posso farlo lo stesso?</h4>
-                <p>Assolutamente sì. Il programma nasce proprio per chi convive con le classiche problematiche dell'età matura. Ogni movimento è a impatto zero e viene adattato alla tua specifica condizione fisica iniziale.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Cosa succede se non sono pratico con il computer o con la tecnologia?</h4>
-                <p>Abbiamo semplificato tutto al massimo. Non devi installare applicazioni complicate: riceverai i video e le comunicazioni direttamente su WhatsApp o tramite un link cliccabile semplicissimo, perfetto anche da vedere sulla TV di casa o sul telefono.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Il pagamento tramite bonifico è sicuro? Come ho la certezza dell'iscrizione?</h4>
-                <p>Il bonifico bancario è il metodo di tracciamento più sicuro in Italia. Non appena la tua banca emette il pagamento, la nostra azienda riceve la notifica. Riceverai una chiamata di benvenuto e una ricevuta fiscale ufficiale via email o cartacea.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag" style="color: var(--accent-color);">Fai il primo passo</span>
+                    <h2 class="section-title">Inizia il tuo percorso con Movimento 360</h2>
+                    <p>Scrivici oggi stesso. Che tu stia cercando di superare il tuo record personale o semplicemente di muoverti meglio e senza fastidi, Federico e Valerio struttureranno il piano perfetto per te.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">📍 Via Roma 100, Milano</div>
+                        <div class="contact-item">📞 02 9876543</div>
+                        <div class="contact-item">✉️ info@movimento360.it</div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST" onsubmit="alert('Richiesta inviata con successo! Federico o Valerio ti contatteranno entro 24 ore.'); return false;">
+                        <div class="form-group">
+                            <label for="nome">Nome e Cognome</label>
+                            <input type="text" id="nome" placeholder="Es. Andrea Bianchi" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Indirizzo Email</label>
+                            <input type="email" id="email" placeholder="Es. andrea@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servizio-interesse">Quale percorso fa per te?</label>
+                            <select id="servizio-interesse" required>
+                                <option value="">Scegli un programma...</option>
+                                <option value="performance">Performance Atletica (Professionisti/Amatori)</option>
+                                <option value="fitness">Fitness Quotidiano & Mobilità Terza Età</option>
+                                <option value="rieducazione">Rieducazione Posturale & Recupero Funzionale</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="messaggio">Raccontaci brevemente i tuoi obiettivi o necessità</label>
+                            <textarea id="messaggio" rows="4" placeholder="Es. Vorrei migliorare la mia mobilità generale / Devo prepararmi per una gara..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-main" style="width: 100%; border-radius: 8px;">Invia Richiesta Informazioni</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p><strong>Vitalità Over 60 S.r.l.</strong> - Sede Legale: Via del Benessere 45, Milano (MI) | P.IVA: 01234567890</p>
-            <p>Telefono: 02 1234567 | Email: info@vitalitaover60.it</p>
-            <p style="font-size: 13px; opacity: 0.6; margin-top: 20px;">Disclaimer: I contenuti di questo programma non sostituiscono in alcun modo il parere del medico curante. Prima di iniziare qualsiasi attività fisica, è consigliabile consultare il proprio medico per un controllo generale.</p>
-            <p style="font-size: 13px; opacity: 0.6;">&copy; 2026 Vitalità Over 60. Tutti i diritti riservati. <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Privacy Policy</a></p>
+            <p><strong>Movimento 360 S.r.l.</strong> | P.IVA 09876543210 | © 2026 Tutti i diritti riservati.</p>
         </div>
     </footer>
 
